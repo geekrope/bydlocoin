@@ -1,4 +1,10 @@
-﻿var selectedCategory = "";
+﻿interface SelectionChanged {
+	(page: number): void;
+}
+
+var selectionChanged: SelectionChanged[] = [];
+
+var selectedCategory = "";
 
 var categories = ["main", "priceChart", "faq", "buy"];
 
@@ -19,16 +25,30 @@ function ScrollToCategory(targetId: string): void {
 }
 
 function GetCurrentPage(): number {
-	return Math.round(window.scrollY / screen.height);
+	return Math.round(window.scrollY / innerHeight);
 }
 
 function ScrollToPage(page: number): void {
-	let newY = page * screen.height;
+	let newY = page * innerHeight;
 
 	window.scrollTo({ top: newY, left: 0, behavior: "smooth" });
 }
 
-window.onscroll = () => {
+function ChangedPage() {
 	var page = GetCurrentPage();
 	SelectCategory(categories[page]);
+
+	selectionChanged.forEach((value, index, array) => { value(page) });
+}
+
+window.onload = () => {
+	ChangedPage();
+}
+
+window.onscroll = () => {
+	ChangedPage();
+}
+
+window.onresize = () => {
+	ChangedPage();
 }

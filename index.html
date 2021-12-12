@@ -9,15 +9,23 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <div class="header">
+    <img class="ellipse" src="Resources/ellipse.svg" />
+    <div>
         <p class="headerText">БЫДЛО</p>
-    </div>    
-    <div class="wrapper">
-        <div class="menu" style="margin:0px">
-            <p id="main" onclick="ScrollToCategory('main')" class="menuItem">MENU</p>
-            <p id="priceChart" onclick="ScrollToCategory('priceChart')" class="menuItem">PRICE CHART</p>
-            <p id="faq" onclick="ScrollToCategory('faq')" class="menuItem">FAQ</p>
-            <p id="buy" onclick="ScrollToCategory('buy')" class="menuItem">BUY</p>
+        <div class="wrapper">
+            <div class="main" style="grid-column-start:2">
+                <div class="feedback" style="grid-row-start:2">
+                    <div class="feedbackItem">
+                        <p style="color:white">офигеть как офигенно я офигел от офигенности этой офигенной криптоваляты</p>
+                    </div>
+                </div>
+            </div>
+            <div class="menu" style="margin:0px">
+                <p id="main" onclick="ScrollToCategory('main')" class="menuItem">MENU</p>
+                <p id="priceChart" onclick="ScrollToCategory('priceChart')" class="menuItem">PRICE CHART</p>
+                <p id="faq" onclick="ScrollToCategory('faq')" class="menuItem">FAQ</p>
+                <p id="buy" onclick="ScrollToCategory('buy')" class="menuItem">BUY</p>
+            </div>
         </div>
     </div>
 </body>
