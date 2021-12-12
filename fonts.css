@@ -2,3 +2,8 @@
     font-family: Roboto;
     src:url("Resources/Roboto-Regular.ttf");
 }
+
+@font-face {
+    font-family: Druk Wide;
+    src: url("Resources/Druk-Wide-Medium.ttf");
+}

@@ -6,9 +6,12 @@
     margin: 0px;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 .headerText {
     color: white;
-    background: black;
     height: max-content;
     width: max-content;
     font-family: Roboto;
@@ -27,6 +30,8 @@
     top: 50%;
     transform: translate(-50%, -50%);
     transform-origin: 50% 50%;
+    width: 100vw;
+    height: 100vh;
 }
 
 .menuItem {
@@ -34,11 +39,12 @@
     font-weight: 500;
     font-size: 16px;
     color: white;
+    margin: 0px;
 }
 
 .wrapper {
     display: grid;
-    grid-template-columns: max-content auto;
+    grid-template-columns: 100%;
     grid-template-rows: 100vh 100vh 100vh 100vh;
     width: 80%;
     margin-left: auto;
@@ -56,21 +62,31 @@
 .feedback {
     display: flex;
     flex-direction: row;
-    align-content: space-between;
+    justify-content: space-between;
 }
 
 .feedbackItem {
     width: 420px;
     height: 100%;
     backdrop-filter: blur(10px);
-    background-color: gray;
+    background-color: #c4c4c460;
+    border-radius: 10px;
 }
 
 .menu {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    height: 300px;
+    justify-content: space-between;
+    height: 200px;
+    width: 16%;
     cursor: default;
     position: fixed;
 }
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 0px 0px auto;
+}
+
