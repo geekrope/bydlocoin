@@ -72,6 +72,7 @@
     <Content Include="Resources\ellipse.svg" />
     <Content Include="Resources\Roboto-Regular.ttf" />
     <Content Include="Resources\Druk-Wide-Medium.ttf" />
+    <Content Include="Resources\Inter-Regular.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
