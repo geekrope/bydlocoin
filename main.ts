@@ -43,6 +43,8 @@ function ChangedPage() {
 
 window.onload = () => {
 	ChangedPage();
+
+	GetChart({ width: 1000, height: 500, xRange: { min: 0, max: 50 }, yRange: { min: 0, max: 10 } });
 }
 
 window.onscroll = () => {
