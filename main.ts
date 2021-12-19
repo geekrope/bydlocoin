@@ -36,9 +36,11 @@ function ScrollToPage(page: number): void {
 
 function ChangedPage() {
 	var page = GetCurrentPage();
-	SelectCategory(categories[page]);
+	if (page < categories.length) {
+		SelectCategory(categories[page]);
 
-	selectionChanged.forEach((value, index, array) => { value(page) });
+		selectionChanged.forEach((value, index, array) => { value(page) });
+	}	
 }
 
 window.onload = () => {

@@ -22,8 +22,10 @@ function ScrollToPage(page) {
 }
 function ChangedPage() {
     var page = GetCurrentPage();
-    SelectCategory(categories[page]);
-    selectionChanged.forEach(function (value, index, array) { value(page); });
+    if (page < categories.length) {
+        SelectCategory(categories[page]);
+        selectionChanged.forEach(function (value, index, array) { value(page); });
+    }
 }
 window.onload = function () {
     ChangedPage();
