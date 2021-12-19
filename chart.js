@@ -60,10 +60,9 @@ function GetText(text, x, y, transform, transformOrigin) {
         div.style.width = "max-content";
         div.style.height = "min-content";
         textContaier.appendChild(div);
-        textContaier.setAttribute("x", x.toString());
-        textContaier.setAttribute("y", y.toString());
-        textContaier.setAttribute("width", "1");
-        textContaier.setAttribute("height", "1");
+        textContaier.style.transform = "translate(" + x + "px, " + y + "px)";
+        textContaier.setAttribute("width", "100%");
+        textContaier.setAttribute("height", "100%");
         textContaier.style.overflow = "visible";
     }
     return textContaier;
