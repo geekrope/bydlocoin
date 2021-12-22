@@ -1,13 +1,18 @@
+"use strict";
 var selectionChanged = [];
 var selectedCategory = "";
 var categories = ["main", "priceChart", "faq", "buy"];
 function SelectCategory(targetId) {
     if (selectedCategory != "") {
         var selectedElement = document.getElementById(selectedCategory);
-        selectedElement.style.textDecoration = "";
+        if (selectedElement) {
+            selectedElement.style.textDecoration = "";
+        }
     }
     var targetElement = document.getElementById(targetId);
-    targetElement.style.textDecoration = "underline";
+    if (targetElement) {
+        targetElement.style.textDecoration = "underline";
+    }
     selectedCategory = targetId;
 }
 function ScrollToCategory(targetId) {
@@ -29,7 +34,12 @@ function ChangedPage() {
 }
 window.onload = function () {
     ChangedPage();
-    GetChart({ width: 1000, height: 500, xRange: { min: 0, max: 10 }, yRange: { min: 0, max: 8 } });
+    var chart = GetChart({ width: 1000, height: 500, xRange: { min: 0, max: 10 }, yRange: { min: 0, max: 8 } });
+    chart.style.width = "70%";
+    var chartPage = document.getElementById("chartPage");
+    if (chartPage) {
+        chartPage.appendChild(chart);
+    }
 };
 window.onscroll = function () {
     ChangedPage();

@@ -73,6 +73,7 @@
     <Content Include="Resources\Roboto-Regular.ttf" />
     <Content Include="Resources\Druk-Wide-Medium.ttf" />
     <Content Include="Resources\Inter-Regular.ttf" />
+    <Content Include="tsconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

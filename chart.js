@@ -1,19 +1,39 @@
+"use strict";
 var svgNamespace = "http://www.w3.org/2000/svg";
-var xhtmlNamespace = "http://www.w3.org/2000/svg";
+var xhtmlNamespace = "http://www.w3.org/1999/xhtml";
 function GetChart(properties) {
     var svg = document.createElementNS(svgNamespace, "svg");
     var marginX = 100;
     var marginY = 40;
+    var chartYPadding = 10;
     if (svg instanceof SVGElement) {
         svg.setAttribute("viewBox", "0 0 " + properties.width + " " + properties.height);
         var widthUnit = (properties.width - marginX) / (properties.xRange.max - properties.xRange.min);
         var heightUnit = (properties.height - marginY) / (properties.yRange.max - properties.yRange.min);
+        var innerHeight_1 = properties.height - marginY - chartYPadding;
+        var xScope = properties.xRange.max - properties.xRange.min;
+        var yScope = properties.yRange.max - properties.yRange.min;
+        var chartDy = yScope / xScope;
+        var chartData = "M " + marginX + " " + (properties.height - marginY - chartYPadding);
         for (var x = properties.xRange.min; x < properties.xRange.max; x++) {
             var absoluteY = properties.height - marginY;
             var absoluteX = widthUnit * x + widthUnit / 2 + marginX;
-            var text = GetText(x + " day", absoluteX, absoluteY, "translate(-50%,0)", "50% 0%");
+            var text = GetText((x + 1) + " day", absoluteX, absoluteY, "translate(-50%,0)", "50% 0%");
+            var nextYValue = x / xScope * yScope;
+            var addedDistortion = Math.random() * chartDy;
+            if (x < properties.xRange.max - 1) {
+                chartData += " L " + absoluteX + " " + (innerHeight_1 - innerHeight_1 * (nextYValue + addedDistortion) / yScope);
+            }
+            else {
+                chartData += " L " + absoluteX + " 0";
+            }
             svg.appendChild(text);
         }
+        var chart = document.createElementNS(svgNamespace, "path");
+        chart.setAttribute("d", chartData);
+        chart.setAttribute("stroke", "white");
+        chart.setAttribute("stroke-width", "3");
+        svg.appendChild(chart);
         for (var y = properties.yRange.min; y < properties.yRange.max; y++) {
             var absoluteY = heightUnit * y + heightUnit / 2;
             var absoluteX = marginX / 2;
@@ -41,7 +61,7 @@ function GetChart(properties) {
             svg.appendChild(horizontalLine);
         }
     }
-    document.body.appendChild(svg);
+    return svg;
 }
 function GetText(text, x, y, transform, transformOrigin) {
     var textContaier = document.createElementNS(svgNamespace, "foreignObject");
