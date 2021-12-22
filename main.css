@@ -90,3 +90,22 @@
     align-items: center;
     margin: 0px 0px 0px auto;
 }
+
+.buttonStyle {
+    width: 336px;
+    height: 38px;
+    border-radius: 19px;
+    background: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonText {
+    margin: auto;
+    vertical-align: middle;
+    font-size: 16px;
+    font-family: Inter;
+    cursor: pointer;
+    font-weight: 600;
+}
