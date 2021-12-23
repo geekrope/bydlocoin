@@ -4,9 +4,19 @@ const xhtmlNamespace = "http://www.w3.org/1999/xhtml";
 function GetChart(properties: { width: number, height: number, xRange: { min: number, max: number }, yRange: { min: number, max: number } }): SVGElement {
 	let svg = document.createElementNS(svgNamespace, "svg");
 
+	svg.innerHTML = `
+	<defs>
+		<linearGradient id="chartGradient" gradientTransform="rotate(90)">
+		  <stop offset="0%" stop-color="rgba(255,255,255,0.25)"/>
+		  <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+		</linearGradient>
+	</defs>
+	`;
+
 	const marginX = 100;
 	const marginY = 40;
 	const chartYPadding = 10;
+	const thickness = 3;
 
 	if (svg instanceof SVGElement) {
 		svg.setAttribute("viewBox", `0 0 ${properties.width} ${properties.height}`);
@@ -35,11 +45,11 @@ function GetChart(properties: { width: number, height: number, xRange: { min: nu
 				chartData += ` L ${absoluteX} ${innerHeight - innerHeight * (nextYValue + addedDistortion) / yScope}`;
 			}
 			else {
-				chartData += ` L ${absoluteX} 0`;
+				chartData += ` L ${absoluteX + widthUnit / 2 - thickness} ${thickness}`;
 			}
 
 			svg.appendChild(text);
-		}		
+		}
 
 		for (let y: number = properties.yRange.min; y < properties.yRange.max; y++) {
 			const absoluteY = heightUnit * y + heightUnit / 2;
@@ -65,12 +75,12 @@ function GetChart(properties: { width: number, height: number, xRange: { min: nu
 			var horizontalLine = document.createElementNS(svgNamespace, "line");
 
 			horizontalLine.setAttribute("x1", marginX.toString());
-			horizontalLine.setAttribute("x2", properties.width.toString());
+			horizontalLine.setAttribute("x2", (properties.width - thickness).toString());
 			horizontalLine.setAttribute("y1", absoluteY.toString());
 			horizontalLine.setAttribute("y2", absoluteY.toString());
 
 			horizontalLine.setAttribute("stroke", "rgba(255,255,255,0.1)");
-			horizontalLine.setAttribute("stroke-width", "3");
+			horizontalLine.setAttribute("stroke-width", thickness.toString());
 
 			svg.appendChild(text);
 			svg.appendChild(horizontalLine);
@@ -81,6 +91,12 @@ function GetChart(properties: { width: number, height: number, xRange: { min: nu
 		chart.setAttribute("stroke", "white");
 		chart.setAttribute("stroke-width", "3");
 		chart.setAttribute("fill", "none");
+
+		let chartGradient = document.createElementNS(svgNamespace, "path");
+		chartGradient.setAttribute("d", chartData + `L ${properties.width - thickness} ${innerHeight} Z`);
+		chartGradient.setAttribute("fill", "url('#chartGradient')");
+
+		svg.appendChild(chartGradient);
 		svg.appendChild(chart);
 	}
 
