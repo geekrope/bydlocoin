@@ -29,11 +29,6 @@ function GetChart(properties) {
             }
             svg.appendChild(text);
         }
-        var chart = document.createElementNS(svgNamespace, "path");
-        chart.setAttribute("d", chartData);
-        chart.setAttribute("stroke", "white");
-        chart.setAttribute("stroke-width", "3");
-        svg.appendChild(chart);
         for (var y = properties.yRange.min; y < properties.yRange.max; y++) {
             var absoluteY = heightUnit * y + heightUnit / 2;
             var absoluteX = marginX / 2;
@@ -60,6 +55,12 @@ function GetChart(properties) {
             svg.appendChild(text);
             svg.appendChild(horizontalLine);
         }
+        var chart = document.createElementNS(svgNamespace, "path");
+        chart.setAttribute("d", chartData);
+        chart.setAttribute("stroke", "white");
+        chart.setAttribute("stroke-width", "3");
+        chart.setAttribute("fill", "none");
+        svg.appendChild(chart);
     }
     return svg;
 }

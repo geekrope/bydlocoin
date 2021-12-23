@@ -39,13 +39,7 @@ function GetChart(properties: { width: number, height: number, xRange: { min: nu
 			}
 
 			svg.appendChild(text);
-		}
-
-		let chart = document.createElementNS(svgNamespace, "path");
-		chart.setAttribute("d", chartData);
-		chart.setAttribute("stroke", "white");
-		chart.setAttribute("stroke-width", "3");
-		svg.appendChild(chart);
+		}		
 
 		for (let y: number = properties.yRange.min; y < properties.yRange.max; y++) {
 			const absoluteY = heightUnit * y + heightUnit / 2;
@@ -80,7 +74,14 @@ function GetChart(properties: { width: number, height: number, xRange: { min: nu
 
 			svg.appendChild(text);
 			svg.appendChild(horizontalLine);
-		}		
+		}
+
+		let chart = document.createElementNS(svgNamespace, "path");
+		chart.setAttribute("d", chartData);
+		chart.setAttribute("stroke", "white");
+		chart.setAttribute("stroke-width", "3");
+		chart.setAttribute("fill", "none");
+		svg.appendChild(chart);
 	}
 
 	return svg;
