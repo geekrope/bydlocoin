@@ -1,7 +1,7 @@
 ﻿/*page init*/
 body, html {
     background: black;
-    width: max(100%,1440px);
+    width: max(100%,1460px);
     height: 100%;
     padding: 0px;
     margin: 0px;
@@ -50,19 +50,14 @@ body, html {
     position: relative;
 }
 
-.main {
-    display: grid;
-    width: 100%;
-    height: calc(100% - 200px - 84px); /*200px top-padding*/
-    grid-template-rows: calc(100% - 280px) 280px; /*280px block height*/
-}
-
 /*flex boxes*/
 
 .feedback {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 280px;
+    width: 100%;
 }
 
 .menu {
@@ -78,8 +73,10 @@ body, html {
 .content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: end;
     margin: 0px 0px 0px auto;
+    height: calc(100% - 200px);
+    width: 100%;
 }
 
 /*single items*/

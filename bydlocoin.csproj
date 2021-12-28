@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="chart.ts" />
+    <TypeScriptCompile Include="faq.ts" />
     <TypeScriptCompile Include="main.ts" />
   </ItemGroup>
   <ItemGroup>

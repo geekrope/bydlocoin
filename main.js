@@ -19,7 +19,10 @@ function ScrollToCategory(targetId) {
     ScrollToPage(categories.indexOf(targetId));
 }
 function GetCurrentPage() {
-    return Math.round(window.scrollY / innerHeight);
+    return GetPage(window.scrollY);
+}
+function GetPage(scroll) {
+    return Math.round(scroll / innerHeight);
 }
 function ScrollToPage(page) {
     var newY = page * innerHeight;
@@ -41,9 +44,20 @@ window.onload = function () {
         chartPage.appendChild(chart);
     }
 };
-window.onscroll = function () {
+window.addEventListener("scroll", function (e) {
     ChangedPage();
-};
+});
+window.addEventListener("mousewheel", function (e) {
+    var wheelEvent = e;
+    var body = document.body, html = document.documentElement;
+    var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+    var newScrollPos = Math.min(Math.max(scrollY + wheelEvent.deltaY, 0), height);
+    var distToPage = Math.min(newScrollPos % innerHeight, innerHeight - newScrollPos % innerHeight);
+    if (distToPage < 10) {
+        // fix scroll
+        console.log(distToPage);
+    }
+}, { passive: false });
 window.onresize = function () {
     ChangedPage();
 };
