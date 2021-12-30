@@ -43,7 +43,22 @@ window.onload = function () {
     if (chartPage) {
         chartPage.appendChild(chart);
     }
+    generateFaq();
 };
+function generateFaq() {
+    var faqPage = document.getElementById("faqPage");
+    var content_1 = document.createElement("div");
+    content_1.innerHTML = "<p style=\"color:white; font-family:Inter; font-size:18px; margin-left:30px\">\u042F \u0410\u0411\u041E\u0420\u0418\u0413\u0415\u041D \u042F \u042F \u0410\u0411\u041E\u0420\u0418\u0413\u0415\u041D \u042D\u0422\u041E \u0410 \u041F\u041E\u0422\u041E\u041C \u0411<p>";
+    var content_2 = document.createElement("div");
+    content_2.innerHTML = "<p style=\"color:white; font-family:Inter; font-size:18px; margin-left:30px\">\u0441\u043B\u043E\u043D<p>";
+    var content_3 = document.createElement("div");
+    content_3.innerHTML = "<p style=\"color:white; font-family:Inter; font-size:18px; margin-left:30px\">\u0440\u0430\u0431\u0430<p>";
+    var discussion = createDiscussion([{ header: "хто я", content: content_1 }, { header: "сколько вести пять тонн", content: content_2 }, { header: "что можно купить на один быдло коин", content: content_3 }], "discussion");
+    discussion.style.marginBottom = "67px";
+    if (faqPage) {
+        faqPage.appendChild(discussion);
+    }
+}
 window.addEventListener("scroll", function (e) {
     ChangedPage();
 });

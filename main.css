@@ -79,6 +79,13 @@ body, html {
     width: 100%;
 }
 
+.faqContainer {
+    display: flex;
+    flex-direction: column;
+    border-top: 3px solid white;
+    width: 1040px;
+}
+
 /*single items*/
 
 .menuItem {
@@ -100,6 +107,14 @@ body, html {
     padding: 33px 20px 33px 20px;
 }
 
+.faqItem {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 3px solid white;
+}
+
+/*headers*/
+
 .feedbackItemHeader {
     font-family: Inter;
     font-size: 24px;
@@ -114,6 +129,25 @@ body, html {
     font-size: 18px;
     margin: 0px;
     color: white;
+}
+
+.pageHeader {
+    color: white;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 47px;
+    font-family: Druk Wide;
+    text-align: right;
+    margin-top: 0px;
+}
+
+.faqHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    height: min-content;
 }
 
 /*UI decoration*/

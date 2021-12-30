@@ -40,7 +40,7 @@ function GetPage(scroll: number): number {
 function ScrollToPage(page: number): void {
 	let newY = page * innerHeight;
 
-	window.scrollTo({ top: newY, left: 0, behavior: "smooth"});
+	window.scrollTo({ top: newY, left: 0, behavior: "smooth" });
 }
 
 function ChangedPage() {
@@ -62,6 +62,28 @@ window.onload = () => {
 	if (chartPage) {
 		chartPage.appendChild(chart);
 	}
+
+	generateFaq();
+}
+
+function generateFaq() {
+	let faqPage = document.getElementById("faqPage");
+
+	var content_1 = document.createElement("div");
+	content_1.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin-left:30px">Я АБОРИГЕН Я Я АБОРИГЕН ЭТО А ПОТОМ Б<p>`;
+
+	var content_2 = document.createElement("div");
+	content_2.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin-left:30px">слон<p>`;
+
+	var content_3 = document.createElement("div");
+	content_3.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin-left:30px">хз<p>`;
+
+	let discussion = createDiscussion([{ header: "хто я", content: content_1 }, { header: "сколько вести пять тонн", content: content_2 }, { header: "что можно купить на один быдло коин", content: content_3 }], "discussion");
+	discussion.style.marginBottom = "67px";
+
+	if (faqPage) {
+		faqPage.appendChild(discussion);
+	}
 }
 
 window.addEventListener("scroll", (e: Event) => {
@@ -78,7 +100,7 @@ window.addEventListener("mousewheel", (e: Event) => {
 		html.clientHeight, html.scrollHeight, html.offsetHeight);
 
 	var newScrollPos = Math.min(Math.max(scrollY + wheelEvent.deltaY, 0), height);
-	let distToPage = Math.min(newScrollPos % innerHeight, innerHeight - newScrollPos % innerHeight);	
+	let distToPage = Math.min(newScrollPos % innerHeight, innerHeight - newScrollPos % innerHeight);
 
 	if (distToPage < 10) {
 		// fix scroll

@@ -70,6 +70,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Resources\ellipse.svg" />
+    <Content Include="Resources\plus.svg" />
     <Content Include="Resources\Roboto-Regular.ttf" />
     <Content Include="Resources\Druk-Wide-Medium.ttf" />
     <Content Include="Resources\Inter-Regular.ttf" />
