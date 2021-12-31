@@ -79,8 +79,7 @@ function generateFaq() {
 	content_3.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin-left:30px">хз<p>`;
 
 	let discussion = createDiscussion([{ header: "хто я", content: content_1 }, { header: "сколько вести пять тонн", content: content_2 }, { header: "что можно купить на один быдло коин", content: content_3 }], "discussion");
-	discussion.style.marginBottom = "67px";
-
+	
 	if (faqPage) {
 		faqPage.appendChild(discussion);
 	}

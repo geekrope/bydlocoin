@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title>быд ло ко ин</title>
     <link rel="stylesheet" href="fonts.css" type="text/css" />
-    <link rel="stylesheet" href="main.css" type="text/css" />
+    <link rel="stylesheet" href="desktopMain.css" type="text/css" />
     <script src="chart.js"></script>
     <script src="faq.js"></script>
     <script src="main.js"></script>
@@ -16,7 +16,7 @@
         <p class="headerText" style="z-index:2">БЫДЛО</p>
         <div class="wrapper" style="z-index:1">
             <div id="mainPage" class="content" style="grid-row-start:1; justify-content:space-between; height:calc(100% - 200px - 84px)">
-                <div class="content" style="align-items:center; width:max-content">
+                <div class="content" style="align-items:center; width:max-content; height:calc(100% - 200px - 84px)">
                     <p class="pageHeader">
                         NEW UNIQUE DECENTRALIZED<br />CURRENCY
                     </p>
@@ -47,10 +47,17 @@
                     YOU SHOULD INVEST BEFORE<br />IT'S LATE
                 </p>
             </div>
-            <div id="faqPage" class="content" style="grid-row-start:3; justify-content:space-between">
+            <div id="faqPage" class="content" style="grid-row-start:3; justify-content:space-between; height: calc(100% - 200px - 67px)">
                 <p class="pageHeader">
                     YOUR QUESTIONS AND<br />ANSWERS
-                </p>                
+                </p>
+                <div class="columnContainer" style="width: 280px; border-radius: var(--block--rounding); border: 3px solid white">
+                    <img src="Resources/bKrRF-CKr-I.jpg" class="nftImage" />
+                    <div class="twoColumnsHeader">
+                        <p class="nftHeaderText">Name</p>
+                        <p class="nftHeaderText">Price</p>
+                    </div>
+                </div>
             </div>
             <div class="menu" style="margin:0px">
                 <p id="main" onclick="ScrollToCategory('main')" class="menuItem">MENU</p>

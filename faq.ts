@@ -1,7 +1,9 @@
 ﻿function createDiscussion(questions: { header: string, content: HTMLElement }[], faqId: string) {
 	let discussion = document.createElement("div");
-	discussion.className = "faqContainer";
+	discussion.className = "columnContainer";
 	discussion.id = faqId;
+	discussion.style.width = "70%";
+	discussion.style.borderTop = "3px solid white";
 
 	questions.forEach((value, index, array) => {
 		let faqItem = document.createElement("div");
@@ -9,7 +11,7 @@
 		faqItem.id = faqId + "_item_" + index;
 
 		let faqHeader = document.createElement("div");
-		faqHeader.className = "faqHeader";
+		faqHeader.className = "twoColumnsHeader";
 		faqItem.id = faqId + "_header_" + index;
 
 		let plusId = faqId + "_expand_" + index;

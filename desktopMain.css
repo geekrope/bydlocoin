@@ -1,4 +1,8 @@
-﻿/*page init*/
+﻿:root {
+    --block--rounding: 10px;
+}
+
+/*page init*/
 body, html {
     background: black;
     width: max(100%,1460px);
@@ -75,15 +79,12 @@ body, html {
     flex-direction: column;
     align-items: end;
     margin: 0px 0px 0px auto;
-    height: calc(100% - 200px);
     width: 100%;
 }
 
-.faqContainer {
+.columnContainer {
     display: flex;
-    flex-direction: column;
-    border-top: 3px solid white;
-    width: 1040px;
+    flex-direction: column;    
 }
 
 /*single items*/
@@ -141,13 +142,22 @@ body, html {
     margin-top: 0px;
 }
 
-.faqHeader {
+.twoColumnsHeader {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
     height: min-content;
+}
+
+.nftHeaderText {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    margin: 0px 15px 0px 15px;
+    line-height: 40px;
 }
 
 /*UI decoration*/
@@ -175,3 +185,11 @@ body, html {
     .buttonStyle:hover {
         background: #d4d4d4;
     }
+
+.nftImage {
+    aspect-ratio: 7/5;
+    background: white;
+    object-fit: contain;
+    width: 100%;
+    border-radius: 0px 0px var(--block--rounding) var(--block--rounding);
+}
