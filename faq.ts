@@ -1,11 +1,13 @@
-﻿function createDiscussion(questions: { header: string, content: HTMLElement }[], faqId: string) {
+﻿var openedBranches = new Map<string, string>();
+
+function createDiscussion(questions: { header: string, content: HTMLElement }[], faqId: string) {
 	let discussion = document.createElement("div");
 	discussion.className = "columnContainer";
 	discussion.id = faqId;
 	discussion.style.width = "70%";
 	discussion.style.borderTop = "3px solid white";
 
-	questions.forEach((value, index, array) => {
+	questions.forEach((value, index) => {
 		let faqItem = document.createElement("div");
 		faqItem.className = "faqItem";
 		faqItem.id = faqId + "_item_" + index;
@@ -43,17 +45,19 @@ function expand(iconId: string, contentId: string) {
 	let icon = document.getElementById(iconId);
 	let content = document.getElementById(contentId);
 	if (icon && content) {
-		const transform = "rotate(45deg)";
-
-		var count = countInstances(icon.style.transform, transform);
-		if (count % 2 == 0) {
-			while (icon.style.transform.indexOf(transform) != -1) {
-				icon.style.transform = icon.style.transform.replace(transform, "");
-			}
+		if (openedBranches.has(iconId)) {
+			icon.style.transform = "";
+			content.style.display = "none";
+			openedBranches.delete(iconId);
 		}
+		else {
+			openedBranches.forEach((value, key) => {
+				expand(key, value);
+			});
 
-		content.style.display = (count + 1) % 2 == 1 ? "block" : "none";
-
-		icon.style.transform += transform;
+			icon.style.transform = "rotate(45deg)";
+			content.style.display = "block";
+			openedBranches.set(iconId, contentId);
+		}
 	}
 }

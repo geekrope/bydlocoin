@@ -4,12 +4,12 @@ var selectedCategory = "";
 var categories = ["main", "priceChart", "faq", "buy"];
 function SelectCategory(targetId) {
     if (selectedCategory != "") {
-        var selectedElement = document.getElementById(selectedCategory);
+        let selectedElement = document.getElementById(selectedCategory);
         if (selectedElement) {
             selectedElement.style.textDecoration = "";
         }
     }
-    var targetElement = document.getElementById(targetId);
+    let targetElement = document.getElementById(targetId);
     if (targetElement) {
         targetElement.style.textDecoration = "underline";
     }
@@ -25,54 +25,57 @@ function GetPage(scroll) {
     return Math.round(scroll / innerHeight);
 }
 function ScrollToPage(page) {
-    var newY = page * innerHeight;
+    let newY = page * innerHeight;
     window.scrollTo({ top: newY, left: 0, behavior: "smooth" });
 }
 function ChangedPage() {
-    var page = GetCurrentPage();
+    let page = GetCurrentPage();
     if (page < categories.length) {
-        SelectCategory(categories[page]);
-        selectionChanged.forEach(function (value, index, array) { value(page); });
+        let category = categories[page];
+        if (category) {
+            SelectCategory(category);
+        }
+        selectionChanged.forEach((value) => { value(page); });
     }
 }
-window.onload = function () {
+window.onload = () => {
     ChangedPage();
-    var chart = GetChart({ width: 1000, height: 500, xRange: { min: 0, max: 10 }, yRange: { min: 0, max: 8 } });
+    let chart = GetChart({ width: 1000, height: 500, xRange: { min: 0, max: 10 }, yRange: { min: 0, max: 8 } });
     chart.style.width = "70%";
-    var chartPage = document.getElementById("chartPage");
+    let chartPage = document.getElementById("chartPage");
     if (chartPage) {
         chartPage.appendChild(chart);
     }
     generateFaq();
 };
 function generateFaq() {
-    var faqPage = document.getElementById("faqPage");
+    let faqPage = document.getElementById("faqPage");
     var content_1 = document.createElement("div");
-    content_1.innerHTML = "<p style=\"color:white; font-family:Inter; font-size:18px; margin-left:30px\">\u042F \u0410\u0411\u041E\u0420\u0418\u0413\u0415\u041D \u042F \u042F \u0410\u0411\u041E\u0420\u0418\u0413\u0415\u041D \u042D\u0422\u041E \u0410 \u041F\u041E\u0422\u041E\u041C \u0411<p>";
+    content_1.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin-left:30px">Я АБОРИГЕН Я Я АБОРИГЕН ЭТО А ПОТОМ Б<p>`;
     var content_2 = document.createElement("div");
-    content_2.innerHTML = "<p style=\"color:white; font-family:Inter; font-size:18px; margin-left:30px\">\u0441\u043B\u043E\u043D<p>";
+    content_2.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin-left:30px">слон<p>`;
     var content_3 = document.createElement("div");
-    content_3.innerHTML = "<p style=\"color:white; font-family:Inter; font-size:18px; margin-left:30px\">\u0445\u0437<p>";
-    var discussion = createDiscussion([{ header: "хто я", content: content_1 }, { header: "сколько вести пять тонн", content: content_2 }, { header: "что можно купить на один быдло коин", content: content_3 }], "discussion");
+    content_3.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin-left:30px">хз<p>`;
+    let discussion = createDiscussion([{ header: "хто я", content: content_1 }, { header: "сколько вести пять тонн", content: content_2 }, { header: "что можно купить на один быдло коин", content: content_3 }], "discussion");
     if (faqPage) {
         faqPage.appendChild(discussion);
     }
 }
-window.addEventListener("scroll", function (e) {
+window.addEventListener("scroll", () => {
     ChangedPage();
 });
-window.addEventListener("mousewheel", function (e) {
-    var wheelEvent = e;
-    var body = document.body, html = document.documentElement;
-    var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+window.addEventListener("mousewheel", (e) => {
+    let wheelEvent = e;
+    let body = document.body, html = document.documentElement;
+    let height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
     var newScrollPos = Math.min(Math.max(scrollY + wheelEvent.deltaY, 0), height);
-    var distToPage = Math.min(newScrollPos % innerHeight, innerHeight - newScrollPos % innerHeight);
+    let distToPage = Math.min(newScrollPos % innerHeight, innerHeight - newScrollPos % innerHeight);
     if (distToPage < 10) {
         // fix scroll
         console.log(distToPage);
     }
 }, { passive: false });
-window.onresize = function () {
+window.onresize = () => {
     ChangedPage();
 };
 //# sourceMappingURL=main.js.map

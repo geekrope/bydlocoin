@@ -1,11 +1,33 @@
 {
   "compilerOptions": {
-    "noImplicitAny": false,
+    "strict": true,
+    "alwaysStrict": true,
+    "skipLibCheck": true,
+
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "strictBindCallApply": true,
+
+    "noUnusedLocals": true,
     "noEmitOnError": true,
-    "removeComments": false,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noErrorTruncation": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUnusedParameters": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noUncheckedIndexedAccess": true,
+    "diagnostics": false,
+    "extendedDiagnostics": false,
+    "incremental": true,
+    "allowJs": false,
     "sourceMap": true,
-    "target": "es5",
-    "strict": true
+
+    "target": "ES2019"
   },
   "exclude": [
     "node_modules",
