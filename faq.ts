@@ -23,6 +23,8 @@ function createDiscussion(questions: { header: string, content: HTMLElement }[],
 		value.content.id = contentId;
 		value.content.style.display = "none";
 
+		value.content.style.margin = "10px 0px 10px 0px";
+
 		faqHeader.innerHTML = `
 			<p style="font-family: Inter; font-size: 24px; font-weight: 500; color: white">${value.header}</p>
 			<img src="Resources/plus.svg" id="${plusId}" style="width: 25px; height: 25px; transition: 0.2s" onclick="expand('${plusId}','${contentId}')"/>
@@ -35,10 +37,6 @@ function createDiscussion(questions: { header: string, content: HTMLElement }[],
 	});
 
 	return discussion;
-}
-
-function countInstances(string: string, word: string) {
-	return string.split(word).length - 1;
 }
 
 function expand(iconId: string, contentId: string) {

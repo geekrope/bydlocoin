@@ -17,6 +17,7 @@ function createDiscussion(questions, faqId) {
         let contentId = value.content.id == "" ? faqId + "_content_" + index : value.content.id;
         value.content.id = contentId;
         value.content.style.display = "none";
+        value.content.style.margin = "10px 0px 10px 0px";
         faqHeader.innerHTML = `
 			<p style="font-family: Inter; font-size: 24px; font-weight: 500; color: white">${value.header}</p>
 			<img src="Resources/plus.svg" id="${plusId}" style="width: 25px; height: 25px; transition: 0.2s" onclick="expand('${plusId}','${contentId}')"/>
@@ -26,9 +27,6 @@ function createDiscussion(questions, faqId) {
         discussion.appendChild(faqItem);
     });
     return discussion;
-}
-function countInstances(string, word) {
-    return string.split(word).length - 1;
 }
 function expand(iconId, contentId) {
     let icon = document.getElementById(iconId);

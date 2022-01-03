@@ -182,12 +182,12 @@
         "affectsGlobalScope": true
       },
       "./faq.ts": {
-        "version": "5722ded9ef0b44cf1a0e8ef6ff2e05a8b69a01931cafd68dd3546afb10c88cec",
-        "signature": "c7ac0e47b333a00d9d8f9a60bd16ec1d1233f2a1801bb1ed2f2a41da9da7d2db",
+        "version": "f9bdee51b140c5251c7a3572bca7120b018fdf67061cfe29f11bab1a39404ef7",
+        "signature": "3da79b35649f33dd5e35f06cc8130134fee0f0a83a0c6892decfcd4fa3b5cabb",
         "affectsGlobalScope": true
       },
       "./main.ts": {
-        "version": "7fa032b594ac9cfd1e0b48de3b1d49cbd60ec0c94122bf35c1604d0bff2f641b",
+        "version": "69425a5b28a23a293d9309a1d80483053a9bac2035ec27bd63eb6a33689ad227",
         "signature": "09ff8cc0aa25d35c7517b43aef0aa51d6c8a509fe5cbe66bf0f40c2e1af2c242",
         "affectsGlobalScope": true
       }

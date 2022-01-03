@@ -73,13 +73,35 @@ function generateFaq() {
 	let faqPage = document.getElementById("faqPage");
 
 	var content_1 = document.createElement("div");
-	content_1.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin-left:30px">Я АБОРИГЕН Я Я АБОРИГЕН ЭТО А ПОТОМ Б<p>`;
+	content_1.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin:00px 0px 00px 30px">Я АБОРИГЕН Я Я АБОРИГЕН ЭТО А ПОТОМ Б<p>`;
 
 	var content_2 = document.createElement("div");
-	content_2.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin-left:30px">слон<p>`;
+	content_2.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin:00px 0px 0px 30px">слон<p>`;
 
 	var content_3 = document.createElement("div");
-	content_3.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin-left:30px">хз<p>`;
+	content_3.innerHTML = ` <div style="display:flex; flex-direction:row; justify-content:space-around; width:100%">
+                    <div class="columnContainer" style="width: 280px; border-radius: var(--block--rounding); border: 3px solid white">
+                        <img src="Resources/bKrRF-CKr-I.jpg" class="nftImage" />
+                        <div class="twoColumnsHeader">
+                            <p class="nftHeaderText">Name</p>
+                            <p class="nftHeaderText">Price</p>
+                        </div>
+                    </div>
+                    <div class="columnContainer" style="width: 280px; border-radius: var(--block--rounding); border: 3px solid white">
+                        <img src="Resources/bKrRF-CKr-I.jpg" class="nftImage" />
+                        <div class="twoColumnsHeader">
+                            <p class="nftHeaderText">Name</p>
+                            <p class="nftHeaderText">Price</p>
+                        </div>
+                    </div>
+                    <div class="columnContainer" style="width: 280px; border-radius: var(--block--rounding); border: 3px solid white">
+                        <img src="Resources/bKrRF-CKr-I.jpg" class="nftImage" />
+                        <div class="twoColumnsHeader">
+                            <p class="nftHeaderText">Name</p>
+                            <p class="nftHeaderText">Price</p>
+                        </div>
+                    </div>
+                </div>`;
 
 	let discussion = createDiscussion([{ header: "хто я", content: content_1 }, { header: "сколько вести пять тонн", content: content_2 }, { header: "что можно купить на один быдло коин", content: content_3 }], "discussion");
 
