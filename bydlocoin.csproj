@@ -90,6 +90,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="buy.ts" />
     <TypeScriptCompile Include="chart.ts" />
     <TypeScriptCompile Include="faq.ts" />
     <TypeScriptCompile Include="main.ts" />

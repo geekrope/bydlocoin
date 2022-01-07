@@ -1,7 +1,7 @@
 ﻿const svgNamespace = "http://www.w3.org/2000/svg";
 const xhtmlNamespace = "http://www.w3.org/1999/xhtml";
 
-function GetChart(properties: { width: number, height: number, xRange: { min: number, max: number }, yRange: { min: number, max: number } }): SVGElement {
+function getChart(properties: { width: number, height: number, xRange: { min: number, max: number }, yRange: { min: number, max: number } }): SVGElement {
 	let svg = document.createElementNS(svgNamespace, "svg");
 
 	svg.innerHTML = `
@@ -37,7 +37,7 @@ function GetChart(properties: { width: number, height: number, xRange: { min: nu
 			const absoluteY = properties.height - marginY;
 			const absoluteX = widthUnit * x + widthUnit / 2 + marginX;
 
-			var text = GetText((x + 1) + " day", absoluteX, absoluteY, "translate(-50%,0)", "50% 0%");
+			var text = getText((x + 1) + " day", absoluteX, absoluteY, "translate(-50%,0)", "50% 0%");
 
 			var nextYValue = x / xScope * yScope;
 			var addedDistortion = Math.random() * chartDy;
@@ -70,7 +70,7 @@ function GetChart(properties: { width: number, height: number, xRange: { min: nu
 				priceToText = (price / Math.pow(10, log)).toString() + "+E" + log;
 			}
 
-			var text = GetText(priceToText + "$", absoluteX, absoluteY, "translate(-50%,-50%)", "50% 50%");
+			var text = getText(priceToText + "$", absoluteX, absoluteY, "translate(-50%,-50%)", "50% 50%");
 
 			var horizontalLine = document.createElementNS(svgNamespace, "line");
 
@@ -103,7 +103,7 @@ function GetChart(properties: { width: number, height: number, xRange: { min: nu
 	return svg;
 }
 
-function GetText(text: string, x: number, y: number, transform: string, transformOrigin: string): SVGForeignObjectElement {
+function getText(text: string, x: number, y: number, transform: string, transformOrigin: string): SVGForeignObjectElement {
 	let textContaier = document.createElementNS(svgNamespace, "foreignObject");
 	if (textContaier instanceof SVGForeignObjectElement) {
 		var div = document.createElement("div");

@@ -2,7 +2,7 @@
 var selectionChanged = [];
 var selectedCategory = "";
 var categories = ["main", "priceChart", "faq", "buy"];
-function SelectCategory(targetId) {
+function selectCategory(targetId) {
     if (selectedCategory != "") {
         let selectedElement = document.getElementById(selectedCategory);
         if (selectedElement) {
@@ -15,31 +15,31 @@ function SelectCategory(targetId) {
     }
     selectedCategory = targetId;
 }
-function ScrollToCategory(targetId) {
-    ScrollToPage(categories.indexOf(targetId));
+function scrollToCategory(targetId) {
+    scrollToPage(categories.indexOf(targetId));
 }
-function GetCurrentPage() {
-    return GetPage(window.scrollY);
+function getCurrentPage() {
+    return getPage(window.scrollY);
 }
-function GetPage(scroll) {
+function getPage(scroll) {
     return Math.round(scroll / innerHeight);
 }
-function ScrollToPage(page) {
+function scrollToPage(page) {
     let newY = page * innerHeight;
     window.scrollTo({ top: newY, left: 0, behavior: "smooth" });
 }
-function ChangedPage() {
-    let page = GetCurrentPage();
+function changedPage() {
+    let page = getCurrentPage();
     if (page < categories.length) {
         let category = categories[page];
         if (category) {
-            SelectCategory(category);
+            selectCategory(category);
         }
         selectionChanged.forEach((value) => { value(page); });
     }
 }
 window.onload = () => {
-    ChangedPage();
+    changedPage();
     let chart = GetChart({ width: 1000, height: 500, xRange: { min: 0, max: 10 }, yRange: { min: 0, max: 8 } });
     chart.style.width = "70%";
     let chartPage = document.getElementById("chartPage");
@@ -84,7 +84,7 @@ function generateFaq() {
     }
 }
 window.addEventListener("scroll", () => {
-    ChangedPage();
+    changedPage();
 });
 window.addEventListener("mousewheel", (e) => {
     let wheelEvent = e;
@@ -98,6 +98,6 @@ window.addEventListener("mousewheel", (e) => {
     }
 }, { passive: false });
 window.onresize = () => {
-    ChangedPage();
+    changedPage();
 };
 //# sourceMappingURL=main.js.map

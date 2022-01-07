@@ -176,6 +176,11 @@
         "signature": "9a2b1dd18d499ad245094bbc6939bc3908494909f7ac4e70e2ff83db716b1fa0",
         "affectsGlobalScope": false
       },
+      "./buy.ts": {
+        "version": "1d0e608e6fc4c6edbb0234ed9096c04315242d1c4586823dc1264792b2ad6f45",
+        "signature": "e6cb0491dbac1ca270b90ec20d4713d79b7fcf4105a5e21821dd4390b62dc4df",
+        "affectsGlobalScope": true
+      },
       "./chart.ts": {
         "version": "0b3274ce171b17bee3aaa26dcf3af2fd4bfbf361f24268868700791dea439c0f",
         "signature": "9b8b4d9ad4197831c8539c0d2c02d7b2554f4d6955494056a2f8495c3c440f2c",
@@ -187,8 +192,8 @@
         "affectsGlobalScope": true
       },
       "./main.ts": {
-        "version": "69425a5b28a23a293d9309a1d80483053a9bac2035ec27bd63eb6a33689ad227",
-        "signature": "09ff8cc0aa25d35c7517b43aef0aa51d6c8a509fe5cbe66bf0f40c2e1af2c242",
+        "version": "09fd016258ba7250107798ac4a94d43bfed330dd1b8f369a2c0ac0c3defafaf2",
+        "signature": "dd8575ec51e79dd1bafc29b78d876cde7b9fcbc38832c67121c034e5500b532e",
         "affectsGlobalScope": true
       }
     },
@@ -261,6 +266,7 @@
       "../../../../../program files (x86)/microsoft sdks/typescript/4.2/lib.es5.d.ts",
       "../../../../../program files (x86)/microsoft sdks/typescript/4.2/lib.scripthost.d.ts",
       "../../../../../program files (x86)/microsoft sdks/typescript/4.2/lib.webworker.importscripts.d.ts",
+      "./buy.ts",
       "./chart.ts",
       "./faq.ts",
       "./main.ts"

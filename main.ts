@@ -8,7 +8,7 @@ var selectedCategory = "";
 
 var categories = ["main", "priceChart", "faq", "buy"];
 
-function SelectCategory(targetId: string): void {
+function selectCategory(targetId: string): void {
 
 	if (selectedCategory != "") {
 		let selectedElement = document.getElementById(selectedCategory);
@@ -25,30 +25,30 @@ function SelectCategory(targetId: string): void {
 	selectedCategory = targetId;
 }
 
-function ScrollToCategory(targetId: string): void {
-	ScrollToPage(categories.indexOf(targetId));
+function scrollToCategory(targetId: string): void {
+	scrollToPage(categories.indexOf(targetId));
 }
 
-function GetCurrentPage(): number {
-	return GetPage(window.scrollY);
+function getCurrentPage(): number {
+	return getPage(window.scrollY);
 }
 
-function GetPage(scroll: number): number {
+function getPage(scroll: number): number {
 	return Math.round(scroll / innerHeight);
 }
 
-function ScrollToPage(page: number): void {
+function scrollToPage(page: number): void {
 	let newY = page * innerHeight;
 
 	window.scrollTo({ top: newY, left: 0, behavior: "smooth" });
 }
 
-function ChangedPage() {
-	let page = GetCurrentPage();
+function changedPage() {
+	let page = getCurrentPage();
 	if (page < categories.length) {
 		let category = categories[page];
 		if (category) {
-			SelectCategory(category);
+			selectCategory(category);
 		}
 
 		selectionChanged.forEach((value) => { value(page) });
@@ -56,9 +56,9 @@ function ChangedPage() {
 }
 
 window.onload = () => {
-	ChangedPage();
+	changedPage();
 
-	let chart = GetChart({ width: 1000, height: 500, xRange: { min: 0, max: 10 }, yRange: { min: 0, max: 8 } });
+	let chart = getChart({ width: 1000, height: 500, xRange: { min: 0, max: 10 }, yRange: { min: 0, max: 8 } });
 	chart.style.width = "70%";
 
 	let chartPage = document.getElementById("chartPage");
@@ -111,7 +111,7 @@ function generateFaq() {
 }
 
 window.addEventListener("scroll", () => {
-	ChangedPage();
+	changedPage();
 });
 
 window.addEventListener("mousewheel", (e: Event) => {
@@ -133,5 +133,5 @@ window.addEventListener("mousewheel", (e: Event) => {
 }, { passive: false });
 
 window.onresize = () => {
-	ChangedPage();
+	changedPage();
 }
