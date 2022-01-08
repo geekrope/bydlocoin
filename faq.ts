@@ -23,7 +23,7 @@ function createDiscussion(questions: { header: string, content: HTMLElement }[],
 		value.content.id = contentId;
 		value.content.style.display = "none";
 
-		value.content.style.margin = "10px 0px 10px 0px";
+		value.content.style.margin = "10px 0 10px 0";
 
 		faqHeader.innerHTML = `
 			<p style="font-family: Inter; font-size: 24px; font-weight: 500; color: white">${value.header}</p>

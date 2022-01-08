@@ -14,14 +14,14 @@
 <body>
     <img class="ellipse" src="Resources/ellipse.svg" style="z-index:0" />
     <div style="min-width: 1440px;">
-        <p class="headerText" style="z-index:2">БЫДЛО</p>
+        <h1 class="headerText" style="z-index:2">БЫДЛО</h1>
         <div class="wrapper" style="z-index:1">
-            <div id="mainPage" class="content" style="grid-row-start:1; justify-content:space-between; height:calc(100% - 200px - 84px)">
-                <div class="content" style="align-items:center; width:max-content; height:calc(100% - 200px - 84px)">
-                    <p class="pageHeader">
+            <div id="mainPage" class="content" style="grid-row-start: 1; justify-content: space-between; height: calc(100% - var(--header-margin) - 84px)">
+                <div class="content" style="align-items: center; width: max-content; height: calc(100% - var(--header-margin) - 84px)">
+                    <h1 class="pageHeader">
                         NEW UNIQUE DECENTRALIZED<br />CURRENCY
-                    </p>
-                    <p style="color: white; font-weight: 500; font-size: 16px; line-height: 19px; font-family: Inter;">
+                    </h1>
+                    <p class="description">
                         Cryptocurrency is an electronic means<br />of payment without physical form<br />expression. The basic unit of measurement<br />is "coins" or coins.
                     </p>
                     <button class="buttonStyle">
@@ -44,20 +44,52 @@
                 </div>
             </div>
             <div id="chartPage" class="content" style="grid-row-start:2;">
-                <p class="pageHeader">
+                <h1 class="pageHeader">
                     YOU SHOULD INVEST BEFORE<br />IT'S LATE
-                </p>
+                </h1>
             </div>
-            <div id="faqPage" class="content" style="grid-row-start:3; justify-content:space-between; height: calc(100% - 200px - 67px)">
-                <p class="pageHeader">
+            <div id="faqPage" class="content" style="grid-row-start: 3; justify-content: space-between; height: calc(100% - var(--header-margin) - 67px)">
+                <h1 class="pageHeader">
                     YOUR QUESTIONS AND<br />ANSWERS
-                </p>               
+                </h1>
             </div>
-            <div class="menu" style="margin:0px">
-                <p id="main" onclick="ScrollToCategory('main')" class="menuItem">MENU</p>
-                <p id="priceChart" onclick="ScrollToCategory('priceChart')" class="menuItem">PRICE CHART</p>
-                <p id="faq" onclick="ScrollToCategory('faq')" class="menuItem">FAQ</p>
-                <p id="buy" onclick="ScrollToCategory('buy')" class="menuItem">BUY</p>
+            <div id="buyPage" class="content" style="grid-row-start: 4; align-items: center; width: max-content; margin-left: auto; height: calc(100% - 67px)">
+                <h1 class="pageHeader">
+                    CALCULATE THE PRICE<br />OF YOUR INVESTMENT
+                </h1>
+                <p class="description">
+                    Calculate the value of a coin in relation to<br />your currency and get it at the best value<br />only from us.
+                </p>
+                <div class="converter">
+                    <div style="display: flex; flex-direction: row; justify-content: space-between; border-bottom: 3px solid white; width: 200px;">
+                        <input style="font-family: Inter; font-size: 16px; outline: none; background-color: transparent; color: white; border: none; width: 100%" />
+                        <select style="color:white; background-color: transparent; border: 0px; font-family: Inter">
+                            <option>btc</option>
+                            <option>rub</option>
+                            <option>usd</option>
+                            <option>eur</option>
+                        </select>
+                    </div>
+                    <img src="Resources/identity.svg" style="height: 100%; margin: 0px 30px" />
+                    <div style="display:flex; flex-direction: row; justify-content: space-between; border-bottom: 3px solid white; width: 200px;">
+                        <input style="font-family: Inter; font-size: 16px; outline: none; background-color: transparent; color: white; border: none; width: 100%" />
+                        <select style="color:white; background-color: transparent; border: 0px; font-family: Inter">
+                            <option>btc</option>
+                            <option>rub</option>
+                            <option>usd</option>
+                            <option>eur</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="buttonStyle" style="margin-top: 32px">
+                    <p class="buttonText">GET TOKEN</p>
+                </button>
+            </div>
+            <div class="menu" style="margin:0">
+                <p id="main" onclick="scrollToCategory('main')" class="menuItem">MENU</p>
+                <p id="priceChart" onclick="scrollToCategory('priceChart')" class="menuItem">PRICE CHART</p>
+                <p id="faq" onclick="scrollToCategory('faq')" class="menuItem">FAQ</p>
+                <p id="buy" onclick="scrollToCategory('buy')" class="menuItem">BUY</p>
             </div>
         </div>
     </div>

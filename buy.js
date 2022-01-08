@@ -24,4 +24,30 @@ function currenciesToMap(data) {
     });
     return map;
 }
+function UUID4() {
+    const randomString = (pattern) => {
+        let str = "";
+        const values = self.crypto.getRandomValues(new Uint8Array(pattern.length));
+        for (let index = 0; index < pattern.length; index++) {
+            const value = values[index];
+            if (value) {
+                switch (pattern[index]) {
+                    case "x":
+                        str += (value % 16).toString(16);
+                        break;
+                    case "y":
+                        str += (8 + value % 8).toString(16); // 1???
+                        break;
+                    case "4":
+                        str += "4";
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        return str;
+    };
+    return `${randomString("xxxxxxxx")}-${randomString("xxxx")}-${randomString("4xxx")}-${randomString("yxxx")}-${randomString("xxxxxxxxxxxx")}`;
+}
 //# sourceMappingURL=buy.js.map

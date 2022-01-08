@@ -71,6 +71,8 @@
   <ItemGroup>
     <Content Include="Resources\bKrRF-CKr-I.jpg" />
     <Content Include="Resources\ellipse.svg" />
+    <Content Include="Resources\expand.svg" />
+    <Content Include="Resources\identity.svg" />
     <Content Include="Resources\plus.svg" />
     <Content Include="Resources\Roboto-Regular.ttf" />
     <Content Include="Resources\Druk-Wide-Medium.ttf" />

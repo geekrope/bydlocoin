@@ -177,8 +177,8 @@
         "affectsGlobalScope": false
       },
       "./buy.ts": {
-        "version": "47ba9cb577543d02dc1468c58c4b902bc200ea6422560621e9670e7dddc5f903",
-        "signature": "46ee4ac92a800da095c3f96638c0b4a16537fb8a5ac5fa542f141b54121a5e6c",
+        "version": "d03d077e696dae930cdb9b107ef0df5596d763f3d6a94712d7b4c5aa698ce780",
+        "signature": "ac7b0b0933fc61500e7477a47855ff064682b8d68c13fc51d5e1d5f7393c2406",
         "affectsGlobalScope": true
       },
       "./chart.ts": {
@@ -187,12 +187,12 @@
         "affectsGlobalScope": true
       },
       "./faq.ts": {
-        "version": "f9bdee51b140c5251c7a3572bca7120b018fdf67061cfe29f11bab1a39404ef7",
+        "version": "735c98cd0b103c1da3837d08517ef6a2e2e2be1cd3baa2197da9b14af6521d53",
         "signature": "3da79b35649f33dd5e35f06cc8130134fee0f0a83a0c6892decfcd4fa3b5cabb",
         "affectsGlobalScope": true
       },
       "./main.ts": {
-        "version": "ba4604662b649f5e7403f37969d2b9e1cd70d6aec82907f575e261cca2e2c668",
+        "version": "28e4de27e8bca04eb0baf5aaeadd9395edc021cf9e3b1fba1c92e209c0764ce0",
         "signature": "dd8575ec51e79dd1bafc29b78d876cde7b9fcbc38832c67121c034e5500b532e",
         "affectsGlobalScope": true
       }

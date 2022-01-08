@@ -1,20 +1,29 @@
-﻿:root {
+﻿/*global*/
+:root {
     --block--rounding: 10px;
+    --header-margin: 200px;
 }
 
-/*page init*/
 body, html {
     background: black;
     width: max(100%,1460px);
     height: 100%;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     min-height: 900px;
 }
 
     body::-webkit-scrollbar {
         display: none;
     }
+
+input:focus {
+    outline: none;
+}
+
+select:focus {
+    outline: none;
+}
 
 .headerText {
     color: white;
@@ -49,7 +58,7 @@ body, html {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 200px;
+    padding-top: var(--header-margin);
     min-width: 1440px;
     position: relative;
 }
@@ -78,13 +87,13 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: end;
-    margin: 0px 0px 0px auto;
+    margin: 0 0 0 auto;
     width: 100%;
 }
 
 .columnContainer {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
 }
 
 /*single items*/
@@ -94,7 +103,7 @@ body, html {
     font-weight: 500;
     font-size: 16px;
     color: white;
-    margin: 0px;
+    margin: 0;
 }
 
 .feedbackItem {
@@ -120,7 +129,7 @@ body, html {
     font-family: Inter;
     font-size: 24px;
     font-weight: bold;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 18px;
     color: white;
 }
@@ -128,7 +137,7 @@ body, html {
 .feedbackItemContent {
     font-family: Inter;
     font-size: 18px;
-    margin: 0px;
+    margin: 0;
     color: white;
 }
 
@@ -139,7 +148,7 @@ body, html {
     line-height: 47px;
     font-family: Druk Wide;
     text-align: right;
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .twoColumnsHeader {
@@ -156,7 +165,7 @@ body, html {
     font-size: 16px;
     font-weight: 500;
     color: white;
-    margin: 0px 15px 0px 15px;
+    margin: 0 15px 0 15px;
     line-height: 40px;
 }
 
@@ -191,5 +200,22 @@ body, html {
     background: white;
     object-fit: contain;
     width: 100%;
-    border-radius: 0px 0px var(--block--rounding) var(--block--rounding);
+    border-radius: 0 0 var(--block--rounding) var(--block--rounding);
+}
+
+.description {
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    font-family: Inter;
+    opacity: 0.8
+}
+
+.converter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: min-content;
+    margin-top: 80px;
 }

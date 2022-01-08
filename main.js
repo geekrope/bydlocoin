@@ -51,9 +51,9 @@ window.onload = () => {
 function generateFaq() {
     let faqPage = document.getElementById("faqPage");
     var content_1 = document.createElement("div");
-    content_1.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin:00px 0px 00px 30px">Я АБОРИГЕН Я Я АБОРИГЕН ЭТО А ПОТОМ Б<p>`;
+    content_1.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin:0 0 0 30px">Я АБОРИГЕН Я Я АБОРИГЕН ЭТО А ПОТОМ Б<p>`;
     var content_2 = document.createElement("div");
-    content_2.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin:00px 0px 0px 30px">слон<p>`;
+    content_2.innerHTML = `<p style="color:white; font-family:Inter; font-size:18px; margin:0 0 0 30px">слон<p>`;
     var content_3 = document.createElement("div");
     content_3.innerHTML = ` <div style="display:flex; flex-direction:row; justify-content:space-around; width:100%">
                     <div class="columnContainer" style="width: 280px; border-radius: var(--block--rounding); border: 3px solid white">
