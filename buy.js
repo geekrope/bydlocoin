@@ -7,13 +7,21 @@ class Currency {
 }
 var currencyes = new Map();
 const nominalValue = 50;
-function initCurrencyes() {
-    const httpsRequest = new XMLHttpRequest();
-    httpsRequest.onload = () => {
-        console.log(httpsRequest.response);
-    };
-    httpsRequest.open("GET", "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
-    httpsRequest.responseType = "document";
-    httpsRequest.send();
+function initCurrencies() {
+    fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.json')
+        .then((response) => {
+        const json = response.json();
+        json.then((data) => {
+            currencyes = currenciesToMap(data.usd);
+        });
+    });
+}
+function currenciesToMap(data) {
+    const map = new Map();
+    const keys = Object.keys(data);
+    keys.forEach((key) => {
+        map.set(key, new Currency((value) => { return parseFloat(data[key]) * value; }, (value) => { return value / parseFloat(data[key]); }));
+    });
+    return map;
 }
 //# sourceMappingURL=buy.js.map

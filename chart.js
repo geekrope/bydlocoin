@@ -1,7 +1,7 @@
 "use strict";
 const svgNamespace = "http://www.w3.org/2000/svg";
 const xhtmlNamespace = "http://www.w3.org/1999/xhtml";
-function GetChart(properties) {
+function getChart(properties) {
     let svg = document.createElementNS(svgNamespace, "svg");
     svg.innerHTML = `
 	<defs>
@@ -27,7 +27,7 @@ function GetChart(properties) {
         for (let x = properties.xRange.min; x < properties.xRange.max; x++) {
             const absoluteY = properties.height - marginY;
             const absoluteX = widthUnit * x + widthUnit / 2 + marginX;
-            var text = GetText((x + 1) + " day", absoluteX, absoluteY, "translate(-50%,0)", "50% 0%");
+            var text = getText((x + 1) + " day", absoluteX, absoluteY, "translate(-50%,0)", "50% 0%");
             var nextYValue = x / xScope * yScope;
             var addedDistortion = Math.random() * chartDy;
             if (x < properties.xRange.max - 1) {
@@ -53,7 +53,7 @@ function GetChart(properties) {
                 var log = Math.floor(Math.log(price) / Math.log(10));
                 priceToText = (price / Math.pow(10, log)).toString() + "+E" + log;
             }
-            var text = GetText(priceToText + "$", absoluteX, absoluteY, "translate(-50%,-50%)", "50% 50%");
+            var text = getText(priceToText + "$", absoluteX, absoluteY, "translate(-50%,-50%)", "50% 50%");
             var horizontalLine = document.createElementNS(svgNamespace, "line");
             horizontalLine.setAttribute("x1", marginX.toString());
             horizontalLine.setAttribute("x2", (properties.width - thickness).toString());
@@ -77,7 +77,7 @@ function GetChart(properties) {
     }
     return svg;
 }
-function GetText(text, x, y, transform, transformOrigin) {
+function getText(text, x, y, transform, transformOrigin) {
     let textContaier = document.createElementNS(svgNamespace, "foreignObject");
     if (textContaier instanceof SVGForeignObjectElement) {
         var div = document.createElement("div");

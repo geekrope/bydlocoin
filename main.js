@@ -40,7 +40,7 @@ function changedPage() {
 }
 window.onload = () => {
     changedPage();
-    let chart = GetChart({ width: 1000, height: 500, xRange: { min: 0, max: 10 }, yRange: { min: 0, max: 8 } });
+    let chart = getChart({ width: 1000, height: 500, xRange: { min: 0, max: 10 }, yRange: { min: 0, max: 8 } });
     chart.style.width = "70%";
     let chartPage = document.getElementById("chartPage");
     if (chartPage) {

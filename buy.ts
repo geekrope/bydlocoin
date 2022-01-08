@@ -18,14 +18,30 @@ class Currency
 var currencyes = new Map<string, Currency>();
 const nominalValue = 50;
 
-function initCurrencyes()
+function initCurrencies()
 {
-	const httpsRequest = new XMLHttpRequest();
-	httpsRequest.onload = () =>
+	fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.json')
+		.then((response) =>
+		{
+			const json = response.json();
+			json.then((data) =>
+			{
+				currencyes = currenciesToMap(data.usd);
+			});
+		});
+}
+
+function currenciesToMap(data: any): Map<string, Currency>
+{
+	const map = new Map<string, Currency>();
+	const keys = Object.keys(data);
+	keys.forEach((key) =>
 	{
-		console.log(httpsRequest.response);
-	};
-	httpsRequest.open("GET", "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
-	httpsRequest.responseType = "document";
-	httpsRequest.send();
+		map.set(key, new Currency(
+			(value: number) => { return parseFloat(data[key]) * value; },
+			(value: number) => { return value / parseFloat(data[key]); }
+		));
+	});
+
+	return map;
 }
