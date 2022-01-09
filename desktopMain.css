@@ -17,14 +17,6 @@ body, html {
         display: none;
     }
 
-input:focus {
-    outline: none;
-}
-
-select:focus {
-    outline: none;
-}
-
 .headerText {
     color: white;
     height: max-content;
@@ -94,6 +86,17 @@ select:focus {
 .columnContainer {
     display: flex;
     flex-direction: column;
+}
+
+.rowContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.converterContainer {
+    justify-content: space-between;
+    border-bottom: 3px solid white;
+    width: 200px;
 }
 
 /*single items*/
@@ -219,3 +222,41 @@ select:focus {
     height: min-content;
     margin-top: 80px;
 }
+
+.converterInput {
+    font-family: Inter;
+    font-size: 16px;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    border: none;
+    width: 100%
+}
+
+    .converterInput:focus {
+        outline: none;
+    }
+
+.currenciesText {
+    color: white;
+    margin: 5px;
+    font-family: Inter;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: #222;
+}
+
+.currenciesMenu {    
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url("Resources/expand.svg") no-repeat right center #222;
+}
+
+    .currenciesMenu:focus {
+        outline: none;
+    }
+
+    .currenciesMenu select::-ms-expand {
+        display: none;
+    }

@@ -61,24 +61,17 @@
                     Calculate the value of a coin in relation to<br />your currency and get it at the best value<br />only from us.
                 </p>
                 <div class="converter">
-                    <div style="display: flex; flex-direction: row; justify-content: space-between; border-bottom: 3px solid white; width: 200px;">
-                        <input style="font-family: Inter; font-size: 16px; outline: none; background-color: transparent; color: white; border: none; width: 100%" />
-                        <select style="color:white; background-color: transparent; border: 0px; font-family: Inter">
-                            <option>btc</option>
-                            <option>rub</option>
-                            <option>usd</option>
-                            <option>eur</option>
+                    <div class="rowContainer converterContainer">
+                        <input id="currencyInput" class="converterInput"/>
+                        <select id="currenciesSelector" class="currenciesMenu currenciesText" style="padding: 5px 16px 5px 5px;">  
                         </select>
                     </div>
                     <img src="Resources/identity.svg" style="height: 100%; margin: 0px 30px" />
-                    <div style="display:flex; flex-direction: row; justify-content: space-between; border-bottom: 3px solid white; width: 200px;">
-                        <input style="font-family: Inter; font-size: 16px; outline: none; background-color: transparent; color: white; border: none; width: 100%" />
-                        <select style="color:white; background-color: transparent; border: 0px; font-family: Inter">
-                            <option>btc</option>
-                            <option>rub</option>
-                            <option>usd</option>
-                            <option>eur</option>
-                        </select>
+                    <div class="rowContainer converterContainer">
+                        <input id="currencyOutput" class="converterInput" readonly/>
+                        <p class="currenciesText" style="padding: 5px;">
+                            byd
+                        </p>
                     </div>
                 </div>
                 <button class="buttonStyle" style="margin-top: 32px">
